@@ -1,0 +1,479 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|d:\\learning\\cs464_laptrinhudnet\\frontend.blazor\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|d:\\learning\\cs464_laptrinhudnet\\frontend.blazor\\components\\pages\\admin\\report.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|solutionrelative:components\\pages\\admin\\report.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA5AD724-8987-4FDE-94F1-BB98A728E089}|..\\Backend.API\\Backend.API.csproj|d:\\learning\\cs464_laptrinhudnet\\backend.api\\backend.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA5AD724-8987-4FDE-94F1-BB98A728E089}|..\\Backend.API\\Backend.API.csproj|d:\\learning\\cs464_laptrinhudnet\\backend.api\\controller\\attendancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA5AD724-8987-4FDE-94F1-BB98A728E089}|..\\Backend.API\\Backend.API.csproj|d:\\learning\\cs464_laptrinhudnet\\backend.api\\controller\\schedulecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA5AD724-8987-4FDE-94F1-BB98A728E089}|..\\Backend.API\\Backend.API.csproj|d:\\learning\\cs464_laptrinhudnet\\backend.api\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA5AD724-8987-4FDE-94F1-BB98A728E089}|..\\Backend.API\\Backend.API.csproj|d:\\learning\\cs464_laptrinhudnet\\backend.api\\models\\attendance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA5AD724-8987-4FDE-94F1-BB98A728E089}|..\\Backend.API\\Backend.API.csproj|d:\\learning\\cs464_laptrinhudnet\\backend.api\\models\\schedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DA5AD724-8987-4FDE-94F1-BB98A728E089}|..\\Backend.API\\Backend.API.csproj|d:\\learning\\cs464_laptrinhudnet\\backend.api\\controller\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|d:\\learning\\cs464_laptrinhudnet\\frontend.blazor\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|solutionrelative:components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|d:\\learning\\cs464_laptrinhudnet\\frontend.blazor\\components\\pages\\error.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|solutionrelative:components\\pages\\error.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|d:\\learning\\cs464_laptrinhudnet\\frontend.blazor\\components\\pages\\counter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|solutionrelative:components\\pages\\counter.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|d:\\learning\\cs464_laptrinhudnet\\frontend.blazor\\frontend.blazor.csproj.backup.tmp||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|solutionrelative:frontend.blazor.csproj.backup.tmp||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|d:\\learning\\cs464_laptrinhudnet\\frontend.blazor\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|solutionrelative:components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|d:\\learning\\cs464_laptrinhudnet\\frontend.blazor\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|solutionrelative:components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|d:\\learning\\cs464_laptrinhudnet\\frontend.blazor\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|solutionrelative:components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|d:\\learning\\cs464_laptrinhudnet\\frontend.blazor\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|solutionrelative:wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|d:\\learning\\cs464_laptrinhudnet\\frontend.blazor\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|solutionrelative:components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|d:\\learning\\cs464_laptrinhudnet\\frontend.blazor\\components\\pages\\lecturer\\schedule.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|solutionrelative:components\\pages\\lecturer\\schedule.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|d:\\learning\\cs464_laptrinhudnet\\frontend.blazor\\components\\pages\\student\\attendance.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|solutionrelative:components\\pages\\student\\attendance.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|d:\\learning\\cs464_laptrinhudnet\\frontend.blazor\\components\\pages\\student\\schedule.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|solutionrelative:components\\pages\\student\\schedule.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|d:\\learning\\cs464_laptrinhudnet\\frontend.blazor\\components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|solutionrelative:components\\pages\\login.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|d:\\learning\\cs464_laptrinhudnet\\frontend.blazor\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|d:\\learning\\cs464_laptrinhudnet\\frontend.blazor\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|d:\\learning\\cs464_laptrinhudnet\\frontend.blazor\\wwwroot\\css\\site.css||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|solutionrelative:wwwroot\\css\\site.css||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|d:\\learning\\cs464_laptrinhudnet\\frontend.blazor\\frontend.blazor.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|solutionrelative:frontend.blazor.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|d:\\learning\\cs464_laptrinhudnet\\frontend.blazor\\services\\customauthstateprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EAA09C19-1CC3-4D08-AB76-1084EB762A6B}|Frontend.Blazor.csproj|solutionrelative:services\\customauthstateprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Backend.API",
+              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\Backend.API\\Backend.API.csproj",
+              "RelativeDocumentMoniker": "..\\Backend.API\\Backend.API.csproj",
+              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\Backend.API\\Backend.API.csproj",
+              "RelativeToolTip": "..\\Backend.API\\Backend.API.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-08-21T17:23:54.8Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AttendanceController.cs",
+              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\Backend.API\\Controller\\AttendanceController.cs",
+              "RelativeDocumentMoniker": "..\\Backend.API\\Controller\\AttendanceController.cs",
+              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\Backend.API\\Controller\\AttendanceController.cs",
+              "RelativeToolTip": "..\\Backend.API\\Controller\\AttendanceController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T17:21:39.97Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\Backend.API\\Models\\User.cs",
+              "RelativeDocumentMoniker": "..\\Backend.API\\Models\\User.cs",
+              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\Backend.API\\Models\\User.cs",
+              "RelativeToolTip": "..\\Backend.API\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T17:20:14.9Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Attendance.cs",
+              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\Backend.API\\Models\\Attendance.cs",
+              "RelativeDocumentMoniker": "..\\Backend.API\\Models\\Attendance.cs",
+              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\Backend.API\\Models\\Attendance.cs",
+              "RelativeToolTip": "..\\Backend.API\\Models\\Attendance.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T17:20:10.925Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Report.razor",
+              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Components\\Pages\\Admin\\Report.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Admin\\Report.razor",
+              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Components\\Pages\\Admin\\Report.razor",
+              "RelativeToolTip": "Components\\Pages\\Admin\\Report.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-21T16:33:45.652Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAowAkAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T15:58:29.782Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Schedule.cs",
+              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\Backend.API\\Models\\Schedule.cs",
+              "RelativeDocumentMoniker": "..\\Backend.API\\Models\\Schedule.cs",
+              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\Backend.API\\Models\\Schedule.cs",
+              "RelativeToolTip": "..\\Backend.API\\Models\\Schedule.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T17:19:53.708Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ScheduleController.cs",
+              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\Backend.API\\Controller\\ScheduleController.cs",
+              "RelativeDocumentMoniker": "..\\Backend.API\\Controller\\ScheduleController.cs",
+              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\Backend.API\\Controller\\ScheduleController.cs",
+              "RelativeToolTip": "..\\Backend.API\\Controller\\ScheduleController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAEoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T17:15:10.668Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\Backend.API\\Controller\\AuthController.cs",
+              "RelativeDocumentMoniker": "..\\Backend.API\\Controller\\AuthController.cs",
+              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\Backend.API\\Controller\\AuthController.cs",
+              "RelativeToolTip": "..\\Backend.API\\Controller\\AuthController.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAIwDIAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T16:55:59.986Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "App.razor",
+              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Components\\App.razor",
+              "RelativeDocumentMoniker": "Components\\App.razor",
+              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Components\\App.razor",
+              "RelativeToolTip": "Components\\App.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-21T16:38:24.499Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Error.razor",
+              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Components\\Pages\\Error.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Error.razor",
+              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Components\\Pages\\Error.razor",
+              "RelativeToolTip": "Components\\Pages\\Error.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-21T16:37:15.984Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Counter.razor",
+              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Components\\Pages\\Counter.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Counter.razor",
+              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Components\\Pages\\Counter.razor",
+              "RelativeToolTip": "Components\\Pages\\Counter.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-21T16:37:14.496Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Frontend.Blazor.csproj.Backup.tmp",
+              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Frontend.Blazor.csproj.Backup.tmp",
+              "RelativeDocumentMoniker": "Frontend.Blazor.csproj.Backup.tmp",
+              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Frontend.Blazor.csproj.Backup.tmp",
+              "RelativeToolTip": "Frontend.Blazor.csproj.Backup.tmp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-08-21T16:35:41.959Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Home.razor",
+              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Home.razor",
+              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "Components\\Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-21T16:35:31.693Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Routes.razor",
+              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Components\\Routes.razor",
+              "RelativeDocumentMoniker": "Components\\Routes.razor",
+              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Components\\Routes.razor",
+              "RelativeToolTip": "Components\\Routes.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-21T16:35:22.819Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "site.js",
+              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\site.js",
+              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "wwwroot\\js\\site.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2025-08-21T16:35:03.635Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Components\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "Components\\Layout\\NavMenu.razor",
+              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Components\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "Components\\Layout\\NavMenu.razor",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-21T16:34:11.689Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Schedule.razor",
+              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Components\\Pages\\Lecturer\\Schedule.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Lecturer\\Schedule.razor",
+              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Components\\Pages\\Lecturer\\Schedule.razor",
+              "RelativeToolTip": "Components\\Pages\\Lecturer\\Schedule.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-21T16:32:21.805Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Components\\_Imports.razor",
+              "RelativeDocumentMoniker": "Components\\_Imports.razor",
+              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Components\\_Imports.razor",
+              "RelativeToolTip": "Components\\_Imports.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-21T16:09:14.377Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Attendance.razor",
+              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Components\\Pages\\Student\\Attendance.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Student\\Attendance.razor",
+              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Components\\Pages\\Student\\Attendance.razor",
+              "RelativeToolTip": "Components\\Pages\\Student\\Attendance.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-21T16:31:50.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Schedule.razor",
+              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Components\\Pages\\Student\\Schedule.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Student\\Schedule.razor",
+              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Components\\Pages\\Student\\Schedule.razor",
+              "RelativeToolTip": "Components\\Pages\\Student\\Schedule.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-21T16:15:47.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Login.razor",
+              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Components\\Pages\\Login.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Login.razor",
+              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Components\\Pages\\Login.razor",
+              "RelativeToolTip": "Components\\Pages\\Login.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-21T16:10:10.799Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-21T16:09:09.237Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "site.css",
+              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-08-21T16:08:05.523Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "site.css",
+              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAABaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-08-21T16:07:33.958Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "Frontend.Blazor",
+              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Frontend.Blazor.csproj",
+              "RelativeDocumentMoniker": "Frontend.Blazor.csproj",
+              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Frontend.Blazor.csproj",
+              "RelativeToolTip": "Frontend.Blazor.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-08-21T16:07:04.344Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "CustomAuthStateProvider.cs",
+              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Services\\CustomAuthStateProvider.cs",
+              "RelativeDocumentMoniker": "Services\\CustomAuthStateProvider.cs",
+              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\Frontend.Blazor\\Services\\CustomAuthStateProvider.cs",
+              "RelativeToolTip": "Services\\CustomAuthStateProvider.cs",
+              "ViewState": "AgIAADIAAAAAAAAAAAAIwDoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T16:05:33.039Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

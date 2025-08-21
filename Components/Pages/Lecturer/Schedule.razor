@@ -1,0 +1,65 @@
+﻿@page "/lecturer/attendance/{SessionId:int}"
+@attribute [Authorize(Roles = "Lecturer")]
+@inject HttpClient Http
+@inject NavigationManager Navigation
+@inject Radzen.NotificationService NotificationService
+
+<RadzenCard>
+    <h3>Điểm danh buổi học</h3>
+    <RadzenGrid Data="attendances" TItem="AttendanceDto" AllowSorting="true">
+        <Columns>
+            <Column Title="Tên sinh viên" Property="StudentName" />
+            <Column Title="Điểm danh">
+                <Template Context="attendance">
+                    <RadzenCheckBox @bind-Value="attendance.IsPresent" TriState="false" />
+                </Template>
+            </Column>
+        </Columns>
+    </RadzenGrid>
+    <RadzenButton Text="Cập nhật" Click="UpdateAttendance" Style="margin-top: 20px;" />
+</RadzenCard>
+
+@code {
+    [Parameter] public int SessionId { get; set; }
+    private List<AttendanceDto> attendances = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            attendances = await Http.GetFromJsonAsync<List<AttendanceDto>>($"api/attendance/session/{SessionId}/students");
+        }
+        catch (Exception ex)
+        {
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Error, Summary = "Lỗi", Detail = ex.Message });
+        }
+    }
+
+    private async Task UpdateAttendance()
+    {
+        try
+        {
+            var response = await Http.PostAsJsonAsync("api/attendance/update", attendances);
+            if (response.IsSuccessStatusCode)
+            {
+                NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = "Thành công", Detail = "Đã cập nhật điểm danh!" });
+                Navigation.NavigateTo("/lecturer/schedule");
+            }
+            else
+            {
+                NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Error, Summary = "Lỗi", Detail = "Cập nhật thất bại!" });
+            }
+        }
+        catch (Exception ex)
+        {
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Error, Summary = "Lỗi", Detail = ex.Message });
+        }
+    }
+
+    private class AttendanceDto
+    {
+        public int Id { get; set; }
+        public string StudentName { get; set; }
+        public bool IsPresent { get; set; }
+    }
+}

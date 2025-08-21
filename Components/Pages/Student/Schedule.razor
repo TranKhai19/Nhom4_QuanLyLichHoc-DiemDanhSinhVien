@@ -1,0 +1,52 @@
+﻿@page "/student/schedule"
+@using System.Security.Claims
+@attribute [Authorize(Roles = "Student")]
+@inject HttpClient Http
+@inject AuthenticationStateProvider AuthStateProvider
+@inject Radzen.NotificationService NotificationService
+
+<RadzenCard>
+    <h3>Lịch học</h3>
+    <RadzenCalendar @bind-Value="selectedDate" Change="LoadSchedule" Inline="true" />
+    <RadzenGrid Data="schedules" TItem="ScheduleDto" AllowSorting="true" AllowFiltering="true">
+        <Columns>
+            <Column Title="Môn học" Property="CourseName" />
+            <Column Title="Thời gian" Property="Time" />
+            <Column Title="Phòng" Property="Location" />
+        </Columns>
+    </RadzenGrid>
+</RadzenCard>
+
+@code {
+    private DateTime selectedDate = DateTime.Today;
+    private List<ScheduleDto> schedules = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadSchedule();
+    }
+
+    private async Task LoadSchedule()
+    {
+        try
+        {
+            var authState = await AuthStateProvider.GetAuthenticationStateAsync();
+            var userId = authState.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (!string.IsNullOrEmpty(userId))
+            {
+                schedules = await Http.GetFromJsonAsync<List<ScheduleDto>>($"api/schedule/student/{userId}?date={selectedDate:yyyy-MM-dd}");
+            }
+        }
+        catch (Exception ex)
+        {
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Error, Summary = "Lỗi", Detail = ex.Message });
+        }
+    }
+
+    private class ScheduleDto
+    {
+        public string CourseName { get; set; }
+        public string Time { get; set; } // Ví dụ: "08:00 - 10:00"
+        public string Location { get; set; }
+    }
+}

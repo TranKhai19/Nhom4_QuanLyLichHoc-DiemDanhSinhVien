@@ -1,0 +1,48 @@
+﻿@page "/student/attendance"
+@attribute [Authorize(Roles = "Student")]
+@inject HttpClient Http
+@inject AuthenticationStateProvider AuthStateProvider
+@inject Radzen.NotificationService NotificationService
+
+<RadzenCard>
+    <h3>Điểm danh hôm nay</h3>
+    <RadzenGrid Data="attendances" TItem="AttendanceDto" AllowSorting="true">
+        <Columns>
+            <Column Title="Môn học" Property="CourseName" />
+            <Column Title="Ngày" Property="Date" />
+            <Column Title="Trạng thái">
+                <Template Context="attendance">
+                    <RadzenBadge Text="@attendance.Status" Variant="Variant.Pill" Shade="@(attendance.Status == "Present" ? Shade.Success : Shade.Danger)" />
+                </Template>
+            </Column>
+        </Columns>
+    </RadzenGrid>
+</RadzenCard>
+
+@code {
+    private List<AttendanceDto> attendances = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            var authState = await AuthStateProvider.GetAuthenticationStateAsync();
+            var userId = authState.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            if (!string.IsNullOrEmpty(userId))
+            {
+                attendances = await Http.GetFromJsonAsync<List<AttendanceDto>>($"api/attendance/student/{userId}/today");
+            }
+        }
+        catch (Exception ex)
+        {
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Error, Summary = "Lỗi", Detail = ex.Message });
+        }
+    }
+
+    private class AttendanceDto
+    {
+        public string CourseName { get; set; }
+        public string Date { get; set; }
+        public string Status { get; set; } // "Present" hoặc "Absent"
+    }
+}

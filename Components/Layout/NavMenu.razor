@@ -1,0 +1,36 @@
+﻿@inject AuthenticationStateProvider AuthStateProvider
+@inject NavigationManager Navigation
+@inject Radzen.NotificationService NotificationService
+
+<RadzenMenu>
+    <RadzenMenuItem Text="Đăng nhập" Path="/login" Visible="@(!isAuthenticated)" />
+    <RadzenMenuItem Text="Lịch học" Path="/student/schedule" Visible="@(isAuthenticated && isStudent)" />
+    <RadzenMenuItem Text="Điểm danh" Path="/student/attendance" Visible="@(isAuthenticated && isStudent)" />
+    <RadzenMenuItem Text="Lịch dạy" Path="/lecturer/schedule" Visible="@(isAuthenticated && isLecturer)" />
+    <RadzenMenuItem Text="Điểm danh" Path="/lecturer/attendance" Visible="@(isAuthenticated && isLecturer)" />
+    <RadzenMenuItem Text="Báo cáo" Path="/admin/report" Visible="@(isAuthenticated && isAdmin)" />
+    <RadzenMenuItem Text="Đăng xuất" Click="Logout" Visible="@isAuthenticated" />
+</RadzenMenu>
+
+@code {
+    private bool isAuthenticated;
+    private bool isStudent;
+    private bool isLecturer;
+    private bool isAdmin;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthStateProvider.GetAuthenticationStateAsync();
+        isAuthenticated = authState.User.Identity.IsAuthenticated;
+        isStudent = authState.User.IsInRole("Student");
+        isLecturer = authState.User.IsInRole("Lecturer");
+        isAdmin = authState.User.IsInRole("Admin");
+    }
+
+    private async Task Logout()
+    {
+        await ((CustomAuthStateProvider)AuthStateProvider).MarkUserAsLoggedOut();
+        Navigation.NavigateTo("/login");
+        NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Info, Summary = "Đã đăng xuất" });
+    }
+}
