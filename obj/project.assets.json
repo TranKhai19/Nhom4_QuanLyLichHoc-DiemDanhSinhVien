@@ -1385,23 +1385,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tdk19\\.nuget\\packages\\": {},
+    "C:\\Users\\VAN HOANG 04\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Learning\\CS464_LapTrinhUDNet\\Backend.API\\Backend.API.csproj",
+      "projectUniqueName": "D:\\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\\Backend.API.csproj",
       "projectName": "Backend.API",
-      "projectPath": "D:\\Learning\\CS464_LapTrinhUDNet\\Backend.API\\Backend.API.csproj",
-      "packagesPath": "C:\\Users\\tdk19\\.nuget\\packages\\",
-      "outputPath": "D:\\Learning\\CS464_LapTrinhUDNet\\Backend.API\\obj\\",
+      "projectPath": "D:\\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\\Backend.API.csproj",
+      "packagesPath": "C:\\Users\\VAN HOANG 04\\.nuget\\packages\\",
+      "outputPath": "D:\\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\tdk19\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\VAN HOANG 04\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -1429,7 +1429,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.300"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -1467,12 +1467,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.Net.Sdk.Compilers.Toolset",
-            "version": "[9.0.300, 9.0.300]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -1481,7 +1475,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

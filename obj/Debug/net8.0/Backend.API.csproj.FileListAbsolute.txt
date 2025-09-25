@@ -1,0 +1,8 @@
+D:\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\obj\Debug\net8.0\Backend.API.csproj.AssemblyReference.cache
+D:\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\obj\Debug\net8.0\Backend.API.GeneratedMSBuildEditorConfig.editorconfig
+D:\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\obj\Debug\net8.0\Backend.API.AssemblyInfoInputs.cache
+D:\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\obj\Debug\net8.0\Backend.API.AssemblyInfo.cs
+D:\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\obj\Debug\net8.0\Backend.API.csproj.CoreCompileInputs.cache
+D:\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\obj\Debug\net8.0\Backend.API.MvcApplicationPartsAssemblyInfo.cs
+D:\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\obj\Debug\net8.0\Backend.API.MvcApplicationPartsAssemblyInfo.cache
+D:\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\obj\Debug\net8.0\Backend.API.sourcelink.json

@@ -4,9 +4,9 @@
     {
         public int Id { get; set; }
         public int ScheduleId { get; set; }
-        public Schedule Schedule { get; set; }
+        public Schedule Schedule { get; set; } = new Schedule();
         public int StudentId { get; set; }
-        public User Student { get; set; }
-        public bool IsPresent { get; set; }
+        public User Student { get; set; } = new User();
+        public bool ísPresent { get; set; }
     }
 }
