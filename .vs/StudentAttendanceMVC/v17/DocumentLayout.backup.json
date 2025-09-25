@@ -1,58 +1,58 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Learning\\CS464_LapTrinhUDNet\\StudentAttendanceMVC\\",
+  "WorkspaceRootPath": "D:\\C\u00D4NG C\u1EE4\\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|d:\\learning\\cs464_laptrinhudnet\\studentattendancemvc\\views\\attendance\\studentattendance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|solutionrelative:views\\attendance\\studentattendance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|d:\\learning\\cs464_laptrinhudnet\\studentattendancemvc\\views\\schedule\\studentschedule.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|d:\\c\u00F4ng c\u1EE5\\nhom4_quanlylichhoc-diemdanhsinhvien\\views\\schedule\\studentschedule.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|solutionrelative:views\\schedule\\studentschedule.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|d:\\learning\\cs464_laptrinhudnet\\studentattendancemvc\\views\\schedule\\lecturerschedule.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|solutionrelative:views\\schedule\\lecturerschedule.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|d:\\c\u00F4ng c\u1EE5\\nhom4_quanlylichhoc-diemdanhsinhvien\\views\\attendance\\studentattendance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|solutionrelative:views\\attendance\\studentattendance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|d:\\learning\\cs464_laptrinhudnet\\studentattendancemvc\\controllers\\attendancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|solutionrelative:controllers\\attendancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|d:\\learning\\cs464_laptrinhudnet\\studentattendancemvc\\models\\classsession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|solutionrelative:models\\classsession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|d:\\learning\\cs464_laptrinhudnet\\studentattendancemvc\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|solutionrelative:models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|d:\\learning\\cs464_laptrinhudnet\\studentattendancemvc\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|d:\\learning\\cs464_laptrinhudnet\\studentattendancemvc\\views\\attendance\\adminattendance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|solutionrelative:views\\attendance\\adminattendance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|d:\\learning\\cs464_laptrinhudnet\\studentattendancemvc\\views\\attendance\\lecturerattendance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|solutionrelative:views\\attendance\\lecturerattendance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|d:\\learning\\cs464_laptrinhudnet\\studentattendancemvc\\controllers\\schedulescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|solutionrelative:controllers\\schedulescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|d:\\learning\\cs464_laptrinhudnet\\studentattendancemvc\\models\\schedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|solutionrelative:models\\schedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|d:\\learning\\cs464_laptrinhudnet\\studentattendancemvc\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|d:\\c\u00F4ng c\u1EE5\\nhom4_quanlylichhoc-diemdanhsinhvien\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|d:\\learning\\cs464_laptrinhudnet\\studentattendancemvc\\views\\shared\\layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|d:\\c\u00F4ng c\u1EE5\\nhom4_quanlylichhoc-diemdanhsinhvien\\views\\shared\\layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|solutionrelative:views\\shared\\layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|d:\\c\u00F4ng c\u1EE5\\nhom4_quanlylichhoc-diemdanhsinhvien\\views\\schedule\\lecturerschedule.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|solutionrelative:views\\schedule\\lecturerschedule.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|d:\\c\u00F4ng c\u1EE5\\nhom4_quanlylichhoc-diemdanhsinhvien\\controllers\\attendancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|solutionrelative:controllers\\attendancecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|d:\\c\u00F4ng c\u1EE5\\nhom4_quanlylichhoc-diemdanhsinhvien\\models\\classsession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|solutionrelative:models\\classsession.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|d:\\c\u00F4ng c\u1EE5\\nhom4_quanlylichhoc-diemdanhsinhvien\\models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|solutionrelative:models\\student.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|d:\\c\u00F4ng c\u1EE5\\nhom4_quanlylichhoc-diemdanhsinhvien\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|d:\\c\u00F4ng c\u1EE5\\nhom4_quanlylichhoc-diemdanhsinhvien\\views\\attendance\\adminattendance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|solutionrelative:views\\attendance\\adminattendance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|d:\\c\u00F4ng c\u1EE5\\nhom4_quanlylichhoc-diemdanhsinhvien\\views\\attendance\\lecturerattendance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|solutionrelative:views\\attendance\\lecturerattendance.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|d:\\c\u00F4ng c\u1EE5\\nhom4_quanlylichhoc-diemdanhsinhvien\\controllers\\schedulescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|solutionrelative:controllers\\schedulescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|d:\\c\u00F4ng c\u1EE5\\nhom4_quanlylichhoc-diemdanhsinhvien\\models\\schedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{20F6FC60-517C-4251-BD60-F6DA210ABE5E}|StudentAttendanceMVC.csproj|solutionrelative:models\\schedule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,166 +62,149 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "site.css",
-              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\StudentAttendanceMVC\\wwwroot\\css\\site.css",
+              "DocumentMoniker": "D:\\C\u00D4NG C\u1EE4\\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
-              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\StudentAttendanceMVC\\wwwroot\\css\\site.css",
+              "ToolTip": "D:\\C\u00D4NG C\u1EE4\\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\\wwwroot\\css\\site.css",
               "RelativeToolTip": "wwwroot\\css\\site.css",
               "ViewState": "AgIAAAcAAAAAAAAAAAAYwBoAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-09-25T03:27:33.361Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-25T03:27:33.361Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "StudentAttendance.cshtml",
-              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\StudentAttendanceMVC\\Views\\Attendance\\StudentAttendance.cshtml",
+              "DocumentMoniker": "D:\\C\u00D4NG C\u1EE4\\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\\Views\\Attendance\\StudentAttendance.cshtml",
               "RelativeDocumentMoniker": "Views\\Attendance\\StudentAttendance.cshtml",
-              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\StudentAttendanceMVC\\Views\\Attendance\\StudentAttendance.cshtml",
+              "ToolTip": "D:\\C\u00D4NG C\u1EE4\\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\\Views\\Attendance\\StudentAttendance.cshtml",
               "RelativeToolTip": "Views\\Attendance\\StudentAttendance.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-09-25T03:24:53.456Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "AdminAttendance.cshtml",
-              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\StudentAttendanceMVC\\Views\\Attendance\\AdminAttendance.cshtml",
+              "DocumentMoniker": "D:\\C\u00D4NG C\u1EE4\\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\\Views\\Attendance\\AdminAttendance.cshtml",
               "RelativeDocumentMoniker": "Views\\Attendance\\AdminAttendance.cshtml",
-              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\StudentAttendanceMVC\\Views\\Attendance\\AdminAttendance.cshtml",
+              "ToolTip": "D:\\C\u00D4NG C\u1EE4\\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\\Views\\Attendance\\AdminAttendance.cshtml",
               "RelativeToolTip": "Views\\Attendance\\AdminAttendance.cshtml",
               "ViewState": "AgIAAA4AAAAAAAAAAAAmwD4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-25T03:25:03.173Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-25T03:25:03.173Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "LecturerAttendance.cshtml",
-              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\StudentAttendanceMVC\\Views\\Attendance\\LecturerAttendance.cshtml",
+              "DocumentMoniker": "D:\\C\u00D4NG C\u1EE4\\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\\Views\\Attendance\\LecturerAttendance.cshtml",
               "RelativeDocumentMoniker": "Views\\Attendance\\LecturerAttendance.cshtml",
-              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\StudentAttendanceMVC\\Views\\Attendance\\LecturerAttendance.cshtml",
+              "ToolTip": "D:\\C\u00D4NG C\u1EE4\\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\\Views\\Attendance\\LecturerAttendance.cshtml",
               "RelativeToolTip": "Views\\Attendance\\LecturerAttendance.cshtml",
               "ViewState": "AgIAABoAAAAAAAAAAAAmwEoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-25T03:24:45.465Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-25T03:24:45.465Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "StudentSchedule.cshtml",
-              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\StudentAttendanceMVC\\Views\\Schedule\\StudentSchedule.cshtml",
+              "DocumentMoniker": "D:\\C\u00D4NG C\u1EE4\\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\\Views\\Schedule\\StudentSchedule.cshtml",
               "RelativeDocumentMoniker": "Views\\Schedule\\StudentSchedule.cshtml",
-              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\StudentAttendanceMVC\\Views\\Schedule\\StudentSchedule.cshtml",
+              "ToolTip": "D:\\C\u00D4NG C\u1EE4\\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\\Views\\Schedule\\StudentSchedule.cshtml",
               "RelativeToolTip": "Views\\Schedule\\StudentSchedule.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-09-25T03:24:10.211Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "LecturerSchedule.cshtml",
-              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\StudentAttendanceMVC\\Views\\Schedule\\LecturerSchedule.cshtml",
+              "DocumentMoniker": "D:\\C\u00D4NG C\u1EE4\\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\\Views\\Schedule\\LecturerSchedule.cshtml",
               "RelativeDocumentMoniker": "Views\\Schedule\\LecturerSchedule.cshtml",
-              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\StudentAttendanceMVC\\Views\\Schedule\\LecturerSchedule.cshtml",
+              "ToolTip": "D:\\C\u00D4NG C\u1EE4\\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\\Views\\Schedule\\LecturerSchedule.cshtml",
               "RelativeToolTip": "Views\\Schedule\\LecturerSchedule.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-25T03:23:54.166Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AttendanceController.cs",
-              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\StudentAttendanceMVC\\Controllers\\AttendanceController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AttendanceController.cs",
-              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\StudentAttendanceMVC\\Controllers\\AttendanceController.cs",
-              "RelativeToolTip": "Controllers\\AttendanceController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-25T03:23:35.296Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-25T03:23:54.166Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
+              "Title": "AttendanceController.cs",
+              "DocumentMoniker": "D:\\C\u00D4NG C\u1EE4\\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\\Controllers\\AttendanceController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AttendanceController.cs",
+              "ToolTip": "D:\\C\u00D4NG C\u1EE4\\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\\Controllers\\AttendanceController.cs",
+              "RelativeToolTip": "Controllers\\AttendanceController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T03:23:35.296Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Student.cs",
-              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\StudentAttendanceMVC\\Models\\Student.cs",
+              "DocumentMoniker": "D:\\C\u00D4NG C\u1EE4\\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\\Models\\Student.cs",
               "RelativeDocumentMoniker": "Models\\Student.cs",
-              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\StudentAttendanceMVC\\Models\\Student.cs",
+              "ToolTip": "D:\\C\u00D4NG C\u1EE4\\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\\Models\\Student.cs",
               "RelativeToolTip": "Models\\Student.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-25T03:26:26.679Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-25T03:26:26.679Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "ClassSession.cs",
-              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\StudentAttendanceMVC\\Models\\ClassSession.cs",
+              "DocumentMoniker": "D:\\C\u00D4NG C\u1EE4\\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\\Models\\ClassSession.cs",
               "RelativeDocumentMoniker": "Models\\ClassSession.cs",
-              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\StudentAttendanceMVC\\Models\\ClassSession.cs",
+              "ToolTip": "D:\\C\u00D4NG C\u1EE4\\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\\Models\\ClassSession.cs",
               "RelativeToolTip": "Models\\ClassSession.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-25T03:26:37.766Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-25T03:26:37.766Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "SchedulesController.cs",
-              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\StudentAttendanceMVC\\Controllers\\SchedulesController.cs",
+              "DocumentMoniker": "D:\\C\u00D4NG C\u1EE4\\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\\Controllers\\SchedulesController.cs",
               "RelativeDocumentMoniker": "Controllers\\SchedulesController.cs",
-              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\StudentAttendanceMVC\\Controllers\\SchedulesController.cs",
+              "ToolTip": "D:\\C\u00D4NG C\u1EE4\\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\\Controllers\\SchedulesController.cs",
               "RelativeToolTip": "Controllers\\SchedulesController.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-25T03:23:26.214Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Schedule.cs",
-              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\StudentAttendanceMVC\\Models\\Schedule.cs",
-              "RelativeDocumentMoniker": "Models\\Schedule.cs",
-              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\StudentAttendanceMVC\\Models\\Schedule.cs",
-              "RelativeToolTip": "Models\\Schedule.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-25T03:25:54.168Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-25T03:23:26.214Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
+              "Title": "Schedule.cs",
+              "DocumentMoniker": "D:\\C\u00D4NG C\u1EE4\\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\\Models\\Schedule.cs",
+              "RelativeDocumentMoniker": "Models\\Schedule.cs",
+              "ToolTip": "D:\\C\u00D4NG C\u1EE4\\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\\Models\\Schedule.cs",
+              "RelativeToolTip": "Models\\Schedule.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T03:25:54.168Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Layout.cshtml",
-              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\StudentAttendanceMVC\\Views\\Shared\\Layout.cshtml",
+              "DocumentMoniker": "D:\\C\u00D4NG C\u1EE4\\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\\Views\\Shared\\Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\Layout.cshtml",
-              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\StudentAttendanceMVC\\Views\\Shared\\Layout.cshtml",
+              "ToolTip": "D:\\C\u00D4NG C\u1EE4\\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\\Views\\Shared\\Layout.cshtml",
               "RelativeToolTip": "Views\\Shared\\Layout.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
@@ -230,13 +213,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 2,
               "Title": "_Layout.cshtml",
-              "DocumentMoniker": "D:\\Learning\\CS464_LapTrinhUDNet\\StudentAttendanceMVC\\Views\\Shared\\_Layout.cshtml",
+              "DocumentMoniker": "D:\\C\u00D4NG C\u1EE4\\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "D:\\Learning\\CS464_LapTrinhUDNet\\StudentAttendanceMVC\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\C\u00D4NG C\u1EE4\\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAmwDYAAAAHAAAAAAAAAA==",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAAAsAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-09-25T03:25:14.594Z",
               "EditorCaption": ""

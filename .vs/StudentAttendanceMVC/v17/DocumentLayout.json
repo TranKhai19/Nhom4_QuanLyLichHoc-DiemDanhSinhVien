@@ -86,8 +86,7 @@
               "RelativeToolTip": "Views\\Attendance\\StudentAttendance.cshtml",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABIAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-25T03:24:53.456Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-25T03:24:53.456Z"
             },
             {
               "$type": "Document",
@@ -208,8 +207,7 @@
               "RelativeToolTip": "Views\\Shared\\Layout.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-25T03:25:32.008Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-25T03:25:32.008Z"
             },
             {
               "$type": "Document",
@@ -221,8 +219,7 @@
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAACcAAAAAAAAAAAAAAAsAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-25T03:25:14.594Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-25T03:25:14.594Z"
             }
           ]
         }
