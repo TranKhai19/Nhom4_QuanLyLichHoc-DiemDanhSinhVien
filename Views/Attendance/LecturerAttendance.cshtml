@@ -11,7 +11,7 @@
                     <div class="mb-3">
                         <label class="form-label">Chọn lớp để điểm danh:</label>
                         <select class="form-select" name="classId" id="classId">
-                            <option value="">-- Chọn Lớp --</option>
+                            <option value="">-- Chọn Lớp: --</option>
                             @foreach (var cls in Model)
                             {
                                 <option value="@cls.Id">@cls.CourseName - @cls.Date.ToShortDateString()</option>
