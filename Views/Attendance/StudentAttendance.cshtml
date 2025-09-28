@@ -1,13 +1,13 @@
 ﻿@model List<StudentAttendanceMVC.Models.ClassSession>
 
-<div class="row">
-    <div class="col-12">
+<div class="row justify-content-center">
+    <div class="col-12 col-md-10">
         <div class="card">
-            <div class="card-header bg-info text-white">
-                <h3>Xem Lịch Học Hôm Nay & Trạng Thái Điểm Danh (Sinh Viên)</h3>
+            <div class="card-header">
+                <h3 class="mb-0">Xem Lịch Học Hôm Nay & Trạng Thái Điểm Danh</h3>
             </div>
             <div class="card-body">
-                <p><strong>Hôm nay:</strong> @DateTime.Today.ToShortDateString()</p>
+                <p class="text-muted mb-3"><strong>Hôm nay:</strong> @DateTime.Today.ToShortDateString()</p>
                 <div class="table-responsive">
                     <table class="table table-striped table-hover">
                         <thead class="table-dark">
@@ -23,17 +23,19 @@
                             @foreach (var cls in Model.Where(c => c.Date.Date == DateTime.Today.Date))
                             {
                                 <tr>
-                                    <td><strong>@cls.CourseName</strong></td>
+                                    <td><strong class="text-primary">@cls.CourseName</strong></td>
                                     <td>@cls.Date.ToShortDateString()</td>
                                     <td>@cls.Time</td>
                                     <td>@cls.Room</td>
                                     <td>
-                                        @foreach (var student in cls.Students)
-                                        {
-                                            <span class="badge @(student.Attended ? "bg-success" : "bg-danger")">
-                                                @(student.Attended ? "Có" : "Vắng")
-                                            </span>
-                                        }
+                                        <div class="d-flex gap-2 flex-wrap">
+                                            @foreach (var student in cls.Students)
+                                            {
+                                                <span class="badge @(student.Attended ? "bg-success" : "bg-danger")">
+                                                    @(student.Attended ? "Có" : "Vắng")
+                                                </span>
+                                            }
+                                        </div>
                                     </td>
                                 </tr>
                             }

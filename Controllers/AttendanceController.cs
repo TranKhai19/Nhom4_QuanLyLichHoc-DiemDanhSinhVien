@@ -1,87 +1,88 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using StudentAttendanceMVC.Data;
 using StudentAttendanceMVC.Models;
+using CsvHelper;
+using System.Globalization;
+using System.IO;
 
 namespace StudentAttendanceMVC.Controllers
 {
+    [Authorize]  // Yêu cầu đăng nhập cho tất cả action
     public class AttendanceController : Controller
     {
-        // Dữ liệu giả lập lớp học
-        private List<ClassSession> GetClasses()
+        private readonly AppDbContext _context;
+
+        public AttendanceController(AppDbContext context)
         {
-            return new List<ClassSession>
-            {
-                new ClassSession
-                {
-                    Id = 1,
-                    CourseName = "Lập trình Web",
-                    Date = DateTime.Today,
-                    Time = "08:00 - 10:00", // Thêm Time
-                    Room = "Phòng 101",    // Thêm Room
-                    Students = new List<Student>
-                    {
-                        new Student { Id = 1, Name = "Sinh viên X" },
-                        new Student { Id = 2, Name = "Sinh viên Y" },
-                        new Student { Id = 3, Name = "Sinh viên Z" }
-                    }
-                },
-                new ClassSession
-                {
-                    Id = 2,
-                    CourseName = "Cơ sở dữ liệu",
-                    Date = DateTime.Today.AddDays(1),
-                    Time = "13:00 - 15:00", // Thêm Time
-                    Room = "Phòng 102",     // Thêm Room
-                    Students = new List<Student>
-                    {
-                        new Student { Id = 1, Name = "Sinh viên X" },
-                        new Student { Id = 2, Name = "Sinh viên Y" }
-                    }
-                }
-            };
+            _context = context;
         }
 
-        // Giả lập cập nhật điểm danh (sau này dùng POST)
+        [Authorize(Roles = "Lecturer, Admin")]  // Chỉ Lecturer và Admin vào điểm danh
+        public IActionResult LecturerAttendance()
+        {
+            var classes = _context.ClassSessions.ToList();
+            return View(classes);
+        }
+
         [HttpPost]
+        [Authorize(Roles = "Lecturer, Admin")]  // Chỉ Lecturer và Admin cập nhật điểm danh
         public IActionResult UpdateAttendance(int classId, List<int> attendedStudentIds)
         {
-            var classes = GetClasses();
-            var selectedClass = classes.FirstOrDefault(c => c.Id == classId);
+            var selectedClass = _context.ClassSessions.Find(classId);
             if (selectedClass != null)
             {
-                // Giả lập cập nhật
-                foreach (var student in selectedClass.Students)
+                var students = _context.Students.Where(s => s.ClassSessionId == classId).ToList();
+                foreach (var student in students)
                 {
                     student.Attended = attendedStudentIds.Contains(student.Id);
                 }
+                _context.SaveChanges();
+                TempData["Success"] = "Điểm danh đã được cập nhật vào hệ thống!";
             }
-            TempData["Success"] = "Điểm danh đã được cập nhật!";
             return RedirectToAction("LecturerAttendance");
         }
 
-        // Giả lập tải file (sau này dùng backend thực)
-        public IActionResult DownloadAttendance(int classId)
-        {
-            TempData["DownloadMessage"] = "File điểm danh đã được tải (giả lập: attendance.csv)";
-            return RedirectToAction("AdminAttendance");
-        }
-
-        public IActionResult LecturerAttendance()
-        {
-            var classes = GetClasses();
-            return View(classes);
-        }
-
+        [Authorize(Roles = "Student, Admin")]  // Chỉ Student và Admin xem trạng thái
         public IActionResult StudentAttendance()
         {
-            var classes = GetClasses();
-            var todaySchedules = classes.Where(c => c.Date.Date == DateTime.Today.Date).ToList();
-            return View(todaySchedules);
+            var classes = _context.ClassSessions.Where(c => c.Date.Date == DateTime.Today.Date).ToList();
+            return View(classes);
         }
 
+        [Authorize(Roles = "Admin")]  // Chỉ Admin vào quản lý
         public IActionResult AdminAttendance()
         {
-            var classes = GetClasses();
+            var classes = _context.ClassSessions.ToList();
             return View(classes);
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Admin")]  // Chỉ Admin tải file
+        public IActionResult DownloadAttendance(int classId)
+        {
+            var selectedClass = _context.ClassSessions.Find(classId);
+            if (selectedClass != null)
+            {
+                var students = _context.Students.Where(s => s.ClassSessionId == classId).ToList();
+                using (var memoryStream = new MemoryStream())
+                {
+                    using (var writer = new StreamWriter(memoryStream))
+                    {
+                        using (var csv = new CsvWriter(writer, CultureInfo.InvariantCulture))
+                        {
+                            csv.WriteRecords(students.Select(s => new
+                            {
+                                Name = s.Name,
+                                Attended = s.Attended ? "Có" : "Vắng"
+                            }));
+                        }
+                    }
+                    return File(memoryStream.ToArray(), "text/csv", "attendance.csv");
+                }
+            }
+            TempData["DownloadMessage"] = "Không tìm thấy lớp!";
+            return RedirectToAction("AdminAttendance");
         }
     }
 }
