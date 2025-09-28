@@ -1,0 +1,3 @@
+﻿Admin: admin@example.com / Admin@123
+Student: student@example.com / Student@123
+Lecturer: lecturer@example.com / Lecturer@123
