@@ -1,0 +1,56 @@
+﻿@page "/login"
+@attribute [AllowAnonymous]
+@inject HttpClient Http
+@inject ILocalStorageService LocalStorage
+@inject AuthenticationStateProvider AuthStateProvider
+@inject NavigationManager Navigation
+@inject Radzen.NotificationService NotificationService
+
+<RadzenCard Style="max-width: 400px; margin: auto; padding: 20px;">
+    <h3>Đăng nhập</h3>
+    <RadzenFormField Text="Tên đăng nhập" Variant="Variant.Outlined">
+        <RadzenTextBox @bind-Value="loginModel.Username" />
+    </RadzenFormField>
+    <RadzenFormField Text="Mật khẩu" Variant="Variant.Outlined" Style="margin-top: 20px;">
+        <RadzenPassword @bind-Value="loginModel.Password" />
+    </RadzenFormField>
+    <RadzenButton Text="Đăng nhập" Click="LoginAsync" Style="margin-top: 20px;" />
+</RadzenCard>
+
+@code {
+    private LoginModel loginModel = new();
+
+    private async Task LoginAsync()
+    {
+        try
+        {
+            var response = await Http.PostAsJsonAsync("api/auth/login", loginModel);
+            if (response.IsSuccessStatusCode)
+            {
+                var result = await response.Content.ReadFromJsonAsync<LoginResponse>();
+                await LocalStorage.SetItemAsync("authToken", result.Token);
+                await ((CustomAuthStateProvider)AuthStateProvider).MarkUserAsAuthenticated(result.Token);
+                Navigation.NavigateTo("/");
+            }
+            else
+            {
+                NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Error, Summary = "Lỗi", Detail = "Đăng nhập thất bại!" });
+            }
+        }
+        catch (Exception ex)
+        {
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Error, Summary = "Lỗi", Detail = ex.Message });
+        }
+    }
+
+    private class LoginModel
+    {
+        public string Username { get; set; }
+        public string Password { get; set; }
+    }
+
+    private class LoginResponse
+    {
+        public string Token { get; set; }
+    }
+}

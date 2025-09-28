@@ -1,0 +1,65 @@
+﻿@page "/admin/report/{SessionId:int}"
+@attribute [Authorize(Roles = "Admin")]
+@inject HttpClient Http
+@inject IJSRuntime JS
+@inject Radzen.NotificationService NotificationService
+
+<RadzenCard>
+    <h3>Báo cáo điểm danh</h3>
+    <RadzenGrid Data="attendances" TItem="AttendanceDto" AllowSorting="true">
+        <Columns>
+            <Column Title="Tên sinh viên" Property="StudentName" />
+            <Column Title="Trạng thái">
+                <Template Context="attendance">
+                    <RadzenBadge Text="@attendance.Status" Variant="Variant.Pill" Shade="@(attendance.Status == "Present" ? Shade.Success : Shade.Danger)" />
+                </Template>
+            </Column>
+        </Columns>
+    </RadzenGrid>
+    <RadzenButton Text="Tải CSV" Click="DownloadCsv" Style="margin-top: 20px;" />
+</RadzenCard>
+
+@code {
+    [Parameter] public int SessionId { get; set; }
+    private List<AttendanceDto> attendances = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            attendances = await Http.GetFromJsonAsync<List<AttendanceDto>>($"api/attendance/session/{SessionId}/students");
+        }
+        catch (Exception ex)
+        {
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Error, Summary = "Lỗi", Detail = ex.Message });
+        }
+    }
+
+    private async Task DownloadCsv()
+    {
+        try
+        {
+            var response = await Http.GetAsync($"api/attendance/session/{SessionId}/export");
+            if (response.IsSuccessStatusCode)
+            {
+                var content = await response.Content.ReadAsByteArrayAsync();
+                await JS.InvokeVoidAsync("downloadFile", $"attendance_{SessionId}.csv", "text/csv", content);
+                NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Success, Summary = "Thành công", Detail = "Đã tải file CSV!" });
+            }
+            else
+            {
+                NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Error, Summary = "Lỗi", Detail = "Tải file thất bại!" });
+            }
+        }
+        catch (Exception ex)
+        {
+            NotificationService.Notify(new NotificationMessage { Severity = NotificationSeverity.Error, Summary = "Lỗi", Detail = ex.Message });
+        }
+    }
+
+    private class AttendanceDto
+    {
+        public string StudentName { get; set; }
+        public string Status { get; set; }
+    }
+}
