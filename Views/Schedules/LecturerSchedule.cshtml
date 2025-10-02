@@ -1,0 +1,75 @@
+﻿@model List<StudentAttendanceMVC.Models.ClassSession>
+
+<div class="row justify-content-center">
+    <div class="col-12 col-md-10">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="mb-0">Lịch Dạy Của Giảng Viên</h3>
+                <form asp-action="LecturerSchedule" method="get" class="d-flex gap-2 mt-3">
+                    <input type="date" name="dateFilter" class="form-control" value="@ViewBag.DateFilter.ToString("yyyy-MM-dd")" />
+                    <button type="submit" class="btn btn-primary" name="viewMode" value="day">Hiển Thị Ngày</button>
+                    <button type="submit" class="btn btn-info" name="viewMode" value="week">Hiển Thị Tuần</button>
+                </form>
+            </div>
+            <div class="card-body">
+                @if (Model.Any())
+                {
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Môn Học</th>
+                                    <th>Ngày</th>
+                                    <th>Giờ</th>
+                                    <th>Phòng</th>
+                                    <th>Hành Động</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var cls in Model)
+                                {
+                                    <tr>
+                                        <td><strong class="text-primary">@cls.CourseName</strong></td>
+                                        <td>@cls.Date.ToString("dd/MM/yyyy")</td>
+                                        <td>@cls.Time</td>
+                                        <td>@cls.Room</td>
+                                        <td>
+                                            <a href="@Url.Action("LecturerStudents", new { classId = cls.Id })" class="btn btn-primary">Điểm Danh</a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                else
+                {
+                    <p class="text-center text-muted">Không có lịch dạy nào.</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        @foreach (var cls in Model)
+        {
+                <text>
+                    $('#attendanceModal-@cls.Id').on('show.bs.modal', function (event) {
+                        var button = $(event.relatedTarget);
+                        var classId = button.data('class-id');
+                        var modal = $(this);
+                        console.log("Loading attendance for class ID: " + classId); // Debug log
+                        $.get('@Url.Action("AttendanceForm", "Schedules")', { classId: classId }, function (data) {
+                            console.log("AJAX success: Data loaded"); // Debug log
+                            modal.find('#attendanceModalContent-@cls.Id').html(data);
+                        }).fail(function (jqXHR, textStatus, errorThrown) {
+                            console.error("AJAX error: " + textStatus + " - " + errorThrown); // Debug log
+                            modal.find('#attendanceModalContent-@cls.Id').html('<p class="text-danger">Không thể tải danh sách sinh viên. Vui lòng thử lại.</p>');
+                        });
+                    });
+                </text>
+        }
+    });
+</script>

@@ -1,0 +1,57 @@
+﻿@model List<StudentAttendanceMVC.Models.Schedules>
+@inject StudentAttendanceMVC.Data.AppDbContext _context
+
+<div class="row justify-content-center">
+    <div class="col-12 col-md-10">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="mb-0">Lịch Học Của Sinh Viên</h3>
+                <form asp-action="StudentSchedule" method="get" class="d-flex gap-2 mt-3">
+                    <input type="date" name="dateFilter" class="form-control" value="@ViewBag.DateFilter.ToString("yyyy-MM-dd")" />
+                    <button type="submit" class="btn btn-primary" name="viewMode" value="day">Hiển Thị Ngày</button>
+                    <button type="submit" class="btn btn-info" name="viewMode" value="week">Hiển Thị Tuần</button>
+                </form>
+            </div>
+            <div class="card-body">
+                @if (Model.Any())
+                {
+                    <div class="table-responsive">
+                        <table class="table table-striped table-hover">
+                            <thead class="table-dark">
+                                <tr>
+                                    <th>Môn Học</th>
+                                    <th>Ngày</th>
+                                    <th>Giờ</th>
+                                    <th>Phòng</th>
+                                    <th>Trạng Thái Lớp</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var schedule in Model)
+                                {
+                                    var classSession = _context.ClassSessions.FirstOrDefault(c => c.ScheduleId == schedule.Id);
+                                    var isAttendanceTaken = classSession?.IsAttendanceTaken ?? false;
+                                    <tr>
+                                        <td><strong class="text-primary">@schedule.CourseName</strong></td>
+                                        <td>@schedule.Date.ToString("dd/MM/yyyy")</td>
+                                        <td>@schedule.Time</td>
+                                        <td>@schedule.Room</td>
+                                        <td>
+                                            <span class="badge @(isAttendanceTaken ? "bg-success" : "bg-warning")">
+                                                @(isAttendanceTaken ? "Đã điểm danh" : "Chưa điểm danh")
+                                            </span>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                else
+                {
+                    <p class="text-center text-muted">Không có lịch học nào.</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>

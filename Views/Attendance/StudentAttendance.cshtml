@@ -1,0 +1,38 @@
+﻿@model List<StudentAttendanceMVC.Models.ClassSession>
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header bg-info text-white">
+                <h3>Phía Sinh Viên: Xem Lịch Học Hôm Nay và Trạng Thái Điểm Danh</h3>
+            </div>
+            <div class="card-body">
+                <p>Lịch học hôm nay (@DateTime.Today.ToShortDateString()):</p>
+                <table class="table table-striped table-hover">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Môn Học</th>
+                            <th>Ngày</th>
+                            <th>Giờ</th>
+                            <th>Phòng</th>
+                            <th>Trạng Thái Điểm Danh</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var cls in Model.Where(c => c.Date.Date == DateTime.Today.Date))
+                        {
+                            var status = cls.Students.FirstOrDefault(st => st.Name == User.Identity.Name)?.Attended ?? false ? "Đã điểm danh (Có)" : "Chưa điểm danh hoặc Vắng";
+                            <tr>
+                                <td>@cls.CourseName</td>
+                                <td>@cls.Date.ToShortDateString()</td>
+                                <td>@cls.Time</td>
+                                <td>@cls.Room</td>
+                                <td>@status</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

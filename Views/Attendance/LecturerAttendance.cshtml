@@ -1,0 +1,89 @@
+﻿@model List<StudentAttendanceMVC.Models.ClassSession>
+
+<div class="row justify-content-center">
+    <div class="col-12 col-md-10">
+        <div class="card">
+            <div class="card-header bg-success text-white">
+                <h3 class="mb-0">Điểm Danh Lớp Học (Giảng Viên)</h3>
+            </div>
+            <div class="card-body">
+                @if (TempData["Success"] != null)
+                {
+                    <div class="alert alert-success">
+                        @TempData["Success"]
+                    </div>
+                }
+                @if (TempData["Error"] != null)
+                {
+                    <div class="alert alert-danger">
+                        @TempData["Error"]
+                    </div>
+                }
+                <form asp-action="UpdateAttendance" method="post">
+                    <div class="mb-3">
+                        <label class="form-label">Chọn lớp để điểm danh:</label>
+                        <select class="form-select" name="classId" id="classId">
+                            <option value="">-- Chọn Lớp --</option>
+                            @foreach (var cls in Model)
+                            {
+                                <option value="@cls.Id">@cls.CourseName - @cls.Date.ToShortDateString()</option>
+                            }
+                        </select>
+                    </div>
+                    <div id="studentList" style="display:none;">
+                        @foreach (var cls in Model)
+                        {
+                            <div id="students-@cls.Id" style="display:none;">
+                                <h5 class="card-title">Danh Sách Sinh Viên Lớp: <strong>@cls.CourseName</strong></h5>
+                                <div class="table-responsive">
+                                    <table class="table table-striped table-hover">
+                                        <thead class="table-dark">
+                                            <tr>
+                                                <th>Tên Sinh Viên</th>
+                                                <th>Điểm Danh (Có/Vắng)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var student in cls.Students)
+                                            {
+                                                <tr>
+                                                    <td>@student.Name</td>
+                                                    <td>
+                                                        <input type="checkbox" class="form-check-input" name="attendedStudentIds" value="@student.Id" @(student.Attended ? "checked" : "") />
+                                                        <label class="form-check-label">Có mặt</label>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                    <button type="submit" class="btn btn-success" id="saveAttendanceBtn" onclick="showStudents()" style="display:none;">Lưu Điểm Danh</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('classId').addEventListener('change', function() {
+        var classId = this.value;
+        document.querySelectorAll('[id^="students-"]').forEach(function(el) {
+            el.style.display = 'none';
+        });
+        document.getElementById('saveAttendanceBtn').style.display = 'none';
+        if (classId) {
+            document.getElementById('students-' + classId).style.display = 'block';
+            document.getElementById('saveAttendanceBtn').style.display = 'block';
+        }
+    });
+
+    function showStudents() {
+        var classId = document.getElementById('classId').value;
+        if (classId) {
+            document.getElementById('students-' + classId).style.display = 'block';
+        }
+    }
+</script>

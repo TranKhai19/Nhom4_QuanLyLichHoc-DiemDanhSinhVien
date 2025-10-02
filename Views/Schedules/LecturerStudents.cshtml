@@ -1,0 +1,155 @@
+﻿@model List<StudentAttendanceMVC.Models.ClassSession>
+
+<div class="row justify-content-center">
+    <div class="col-12 col-md-10">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="mb-0">Danh Sách Sinh Viên Trong Lớp Dạy</h3>
+                <a href="@Url.Action("LecturerSchedule")" class="btn btn-secondary float-end">Quay Lại Lịch</a>
+            </div>
+            <div class="card-body">
+                @if (TempData["Success"] != null)
+                {
+                    <div class="alert alert-success">
+                        @TempData["Success"]
+                    </div>
+                }
+                @if (TempData["Error"] != null)
+                {
+                    <div class="alert alert-danger">
+                        @TempData["Error"]
+                    </div>
+                }
+                @if (Model.Any())
+                {
+                    foreach (var cls in Model)
+                    {
+                        <div class="card mb-3">
+                            <div class="card-header bg-primary text-white">
+                                <h5 class="mb-0">Lớp: @cls.CourseName (@cls.Date.ToString("dd/MM/yyyy"), @cls.Time, @cls.Room)</h5>
+                                <span class="badge @(cls.IsAttendanceTaken ? "bg-success" : "bg-warning") float-end">
+                                    @(cls.IsAttendanceTaken ? "Đã điểm danh (có thể chỉnh sửa)" : "Chưa điểm danh")
+                                </span>
+                            </div>
+                            <div class="card-body">
+                                @if (cls.IsAttendanceTaken)
+                                {
+                                    <button type="button" class="btn btn-warning w-100 mb-3" id="editBtn-@cls.Id" onclick="toggleEditForm(@cls.Id, '@cls.Date.ToString("yyyy-MM-dd")', '@cls.Time.Split('-')[0].Trim()')">Chỉnh Sửa</button>
+                                }
+                                else
+                                {
+                                    <button type="button" class="btn btn-primary w-100 mb-3" onclick="showEditForm(@cls.Id, '@cls.Date.ToString("yyyy-MM-dd")', '@cls.Time.Split('-')[0].Trim()')">Bắt Đầu Điểm Danh</button>
+                                }
+                                <form asp-action="TakeAttendance" method="post" class="needs-validation" novalidate id="attendanceForm-@cls.Id" style="display: none;">
+                                    <input type="hidden" name="classId" value="@cls.Id" />
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-hover">
+                                            <thead class="table-dark">
+                                                <tr>
+                                                    <th>Tên Sinh Viên</th>
+                                                    <th>Điểm Danh</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @if (cls.Students != null && cls.Students.Any())
+                                                {
+                                                    @for (int i = 0; i < cls.Students.Count; i++)
+                                                    {
+                                                        var student = cls.Students[i];
+                                                        <tr>
+                                                            <td>@student.Name</td>
+                                                            <td>
+                                                                <div class="form-check">
+                                                                    <input type="checkbox" class="form-check-input" name="attended[@student.Id]" value="true" checked="@student.Attended" />
+                                                                </div>
+                                                            </td>
+                                                        </tr>
+                                                    }
+                                                }
+                                                else
+                                                {
+                                                    <tr>
+                                                        <td colspan="2" class="text-center text-muted">Không có sinh viên nào trong lớp này.</td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <button type="submit" class="btn btn-success w-100 mt-3" id="saveBtn-@cls.Id">Lưu Điểm Danh</button>
+                                </form>
+                                @if (cls.IsAttendanceTaken)
+                                {
+                                    <div class="table-responsive">
+                                        <table class="table table-striped table-hover">
+                                            <thead class="table-dark">
+                                                <tr>
+                                                    <th>Tên Sinh Viên</th>
+                                                    <th>Trạng Thái Điểm Danh</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @foreach (var student in cls.Students)
+                                                {
+                                                    <tr>
+                                                        <td>@student.Name</td>
+                                                        <td>
+                                                            <span class="badge @(student.Attended ? "bg-success" : "bg-danger")">
+                                                                @(student.Attended ? "Có" : "Vắng")
+                                                            </span>
+                                                        </td>
+                                                    </tr>
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    }
+                }
+                else
+                {
+                    <p class="text-center text-muted">Không có lớp hoặc sinh viên nào.</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function showEditForm(classId, dateStr, timeStr) {
+        document.getElementById('attendanceForm-' + classId).style.display = 'block';
+        document.getElementById('editBtn-' + classId).style.display = 'none';
+        document.getElementById('saveBtn-' + classId).textContent = 'Lưu Điểm Danh';
+        checkTimeLimit(classId, dateStr, timeStr);
+    }
+
+    function toggleEditForm(classId, dateStr, timeStr) {
+        var form = document.getElementById('attendanceForm-' + classId);
+        if (form.style.display === 'none') {
+            form.style.display = 'block';
+            document.getElementById('editBtn-' + classId).textContent = 'Hủy Chỉnh Sửa';
+            checkTimeLimit(classId, dateStr, timeStr);
+        } else {
+            form.style.display = 'none';
+            document.getElementById('editBtn-' + classId).textContent = 'Chỉnh Sửa';
+        }
+    }
+
+    function checkTimeLimit(classId, dateStr, timeStr) {
+        var classDate = new Date(dateStr);
+        var [hours, minutes] = timeStr.split(':').map(Number);
+        var classStartTime = new Date(classDate.getFullYear(), classDate.getMonth(), classDate.getDate(), hours, minutes);
+        var timeLimit = new Date(classStartTime.getTime() + 30 * 60 * 1000); // 30 phút
+        var currentTime = new Date();
+
+        if (currentTime > timeLimit) {
+            var form = document.getElementById('attendanceForm-' + classId);
+            var saveBtn = document.getElementById('saveBtn-' + classId);
+            form.classList.add('disabled-form');
+            saveBtn.disabled = true;
+            saveBtn.textContent = 'Quá hạn chỉnh sửa (30 phút đã trôi qua)';
+            saveBtn.style.backgroundColor = '#6c757d';
+        }
+    }
+</script>
