@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StudentAttendanceMVC.Data;
 
@@ -11,9 +12,11 @@ using StudentAttendanceMVC.Data;
 namespace StudentAttendanceMVC.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251002091712_AddIsAttendanceTaken")]
+    partial class AddIsAttendanceTaken
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -288,7 +291,7 @@ namespace StudentAttendanceMVC.Migrations
                         {
                             Id = 3,
                             CourseName = "Toán cao cấp",
-                            Date = new DateTime(2025, 9, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsAttendanceTaken = false,
                             Room = "Phòng 103",
                             ScheduleId = 3,
@@ -363,7 +366,7 @@ namespace StudentAttendanceMVC.Migrations
                             CourseName = "Toán cao cấp",
                             Date = new DateTime(2025, 9, 30, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsActive = true,
-                            LecturerName = "lecturer@example.com",
+                            LecturerName = "lecturer2@example.com",
                             Room = "Phòng 103",
                             StudentName = "student2@example.com",
                             Time = "09:00 - 11:00"

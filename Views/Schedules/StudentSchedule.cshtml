@@ -1,4 +1,5 @@
 ﻿@model List<StudentAttendanceMVC.Models.Schedules>
+@inject StudentAttendanceMVC.Data.AppDbContext _context
 
 <div class="row justify-content-center">
     <div class="col-12 col-md-10">
@@ -22,16 +23,24 @@
                                     <th>Ngày</th>
                                     <th>Giờ</th>
                                     <th>Phòng</th>
+                                    <th>Trạng Thái Lớp</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 @foreach (var schedule in Model)
                                 {
+                                    var classSession = _context.ClassSessions.FirstOrDefault(c => c.ScheduleId == schedule.Id);
+                                    var isAttendanceTaken = classSession?.IsAttendanceTaken ?? false;
                                     <tr>
                                         <td><strong class="text-primary">@schedule.CourseName</strong></td>
                                         <td>@schedule.Date.ToString("dd/MM/yyyy")</td>
                                         <td>@schedule.Time</td>
                                         <td>@schedule.Room</td>
+                                        <td>
+                                            <span class="badge @(isAttendanceTaken ? "bg-success" : "bg-warning")">
+                                                @(isAttendanceTaken ? "Đã điểm danh" : "Chưa điểm danh")
+                                            </span>
+                                        </td>
                                     </tr>
                                 }
                             </tbody>

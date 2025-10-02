@@ -5,8 +5,20 @@
         <div class="card">
             <div class="card-header">
                 <h3 class="mb-0">Báo Cáo Điểm Danh</h3>
+                <div class="d-flex gap-2">
+                    <a href="@Url.Action("DownloadAttendanceExcel", new { classId = 0 })" class="btn btn-success">Tải Excel Toàn Bộ</a>
+                    <form asp-action="ResetAttendance" method="post" class="d-inline">
+                        <button type="submit" class="btn btn-warning" onclick="return confirm('Bạn có chắc muốn reset toàn bộ điểm danh?')">Reset Toàn Bộ</button>
+                    </form>
+                </div>
             </div>
             <div class="card-body">
+                @if (TempData["Success"] != null)
+                {
+                    <div class="alert alert-success">
+                        @TempData["Success"]
+                    </div>
+                }
                 @if (Model.Any())
                 {
                     <div class="table-responsive">

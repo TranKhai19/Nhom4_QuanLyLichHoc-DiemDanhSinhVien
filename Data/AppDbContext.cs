@@ -21,17 +21,20 @@ namespace StudentAttendanceMVC.Data
                 .WithMany(c => c.Students)
                 .HasForeignKey(s => s.ClassSessionId);
 
+ 
+            // Change .HasOne(c => c.Schedule) to .HasOne<Schedules>(c => c.Schedule)
             modelBuilder.Entity<ClassSession>()
-                .HasOne(c => c.Schedule)
+                .HasOne<Schedules>(c => c.Schedule)
                 .WithMany()
                 .HasForeignKey(c => c.ScheduleId);
+                
 
             // Seed data với giá trị tĩnh
             var baseDate = new DateTime(2025, 9, 28); // Ngày cố định
 
             var schedule1 = new Schedules { Id = 1, CourseName = "Lập trình Web", LecturerName = "lecturer@example.com", StudentName = "student@example.com", Date = baseDate, Time = "08:00 - 10:00", Room = "Phòng 101", IsActive = true };
             var schedule2 = new Schedules { Id = 2, CourseName = "Cơ sở dữ liệu", LecturerName = "lecturer@example.com", StudentName = "student@example.com", Date = baseDate.AddDays(1), Time = "13:00 - 15:00", Room = "Phòng 102", IsActive = true };
-            var schedule3 = new Schedules { Id = 3, CourseName = "Toán cao cấp", LecturerName = "lecturer2@example.com", StudentName = "student2@example.com", Date = baseDate.AddDays(2), Time = "09:00 - 11:00", Room = "Phòng 103", IsActive = true };
+            var schedule3 = new Schedules { Id = 3, CourseName = "Toán cao cấp", LecturerName = "lecturer@example.com", StudentName = "student2@example.com", Date = baseDate.AddDays(2), Time = "09:00 - 11:00", Room = "Phòng 103", IsActive = true };
 
             modelBuilder.Entity<Schedules>().HasData(
                 schedule1,
@@ -39,11 +42,13 @@ namespace StudentAttendanceMVC.Data
                 schedule3
             );
 
+            // Trong OnModelCreating, thêm vào seed ClassSession
             modelBuilder.Entity<ClassSession>().HasData(
-                new ClassSession { Id = 1, CourseName = "Lập trình Web", Date = baseDate, Time = "08:00 - 10:00", Room = "Phòng 101", ScheduleId = 1 },
-                new ClassSession { Id = 2, CourseName = "Cơ sở dữ liệu", Date = baseDate.AddDays(1), Time = "13:00 - 15:00", Room = "Phòng 102", ScheduleId = 2 },
-                new ClassSession { Id = 3, CourseName = "Toán cao cấp", Date = baseDate.AddDays(2), Time = "09:00 - 11:00", Room = "Phòng 103", ScheduleId = 3 }
+                new ClassSession { Id = 1, CourseName = "Lập trình Web", Date = new DateTime(2025, 9, 28), Time = "08:00 - 10:00", Room = "Phòng 101", ScheduleId = 1, IsAttendanceTaken = false },
+                new ClassSession { Id = 2, CourseName = "Cơ sở dữ liệu", Date = new DateTime(2025, 9, 29), Time = "13:00 - 15:00", Room = "Phòng 102", ScheduleId = 2, IsAttendanceTaken = false },
+                new ClassSession { Id = 3, CourseName = "Toán cao cấp", Date = new DateTime(2025, 9, 29), Time = "09:00 - 11:00", Room = "Phòng 103", ScheduleId = 3, IsAttendanceTaken = false }
             );
+
 
             // Danh sách sinh viên tĩnh (10-15 sinh viên mỗi lớp)
             var students = new List<Student>

@@ -15,7 +15,7 @@
                 @if (Model.Any())
                 {
                     <div class="table-responsive">
-                        <table class="table table-striped table-hover">
+                        <table class="table table-striped">
                             <thead class="table-dark">
                                 <tr>
                                     <th>Môn Học</th>
@@ -34,23 +34,7 @@
                                         <td>@cls.Time</td>
                                         <td>@cls.Room</td>
                                         <td>
-                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#attendanceModal-@cls.Id" data-class-id="@cls.Id">Điểm Danh</button>
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="attendanceModal-@cls.Id" tabindex="-1" aria-labelledby="attendanceModalLabel-@cls.Id" aria-hidden="true">
-                                                <div id="attendanceModalContent-@cls.Id"></div>
-                                            </div>
-                                            <script>
-                                                $(document).ready(function () {
-                                                    $('#attendanceModal-@cls.Id').on('show.bs.modal', function (event) {
-                                                        var button = $(event.relatedTarget);
-                                                        var classId = button.data('class-id');
-                                                        var modal = $(this);
-                                                        $.get('@Url.Action("AttendanceForm", "Schedules")', { classId: classId }, function (data) {
-                                                            modal.find('#attendanceModalContent-@cls.Id').html(data);
-                                                        });
-                                                    });
-                                                });
-                                            </script>
+                                            <a href="@Url.Action("LecturerStudents", new { classId = cls.Id })" class="btn btn-primary">Điểm Danh</a>
                                         </td>
                                     </tr>
                                 }
@@ -66,3 +50,26 @@
         </div>
     </div>
 </div>
+
+<script>
+    $(document).ready(function () {
+        @foreach (var cls in Model)
+        {
+                <text>
+                    $('#attendanceModal-@cls.Id').on('show.bs.modal', function (event) {
+                        var button = $(event.relatedTarget);
+                        var classId = button.data('class-id');
+                        var modal = $(this);
+                        console.log("Loading attendance for class ID: " + classId); // Debug log
+                        $.get('@Url.Action("AttendanceForm", "Schedules")', { classId: classId }, function (data) {
+                            console.log("AJAX success: Data loaded"); // Debug log
+                            modal.find('#attendanceModalContent-@cls.Id').html(data);
+                        }).fail(function (jqXHR, textStatus, errorThrown) {
+                            console.error("AJAX error: " + textStatus + " - " + errorThrown); // Debug log
+                            modal.find('#attendanceModalContent-@cls.Id').html('<p class="text-danger">Không thể tải danh sách sinh viên. Vui lòng thử lại.</p>');
+                        });
+                    });
+                </text>
+        }
+    });
+</script>
