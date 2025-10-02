@@ -32,8 +32,8 @@ namespace StudentAttendanceMVC.Data
             // Seed data với giá trị tĩnh
             var baseDate = new DateTime(2025, 9, 28); // Ngày cố định
 
-            var schedule1 = new Schedules { Id = 1, CourseName = "Lập trình Web", LecturerName = "lecturer@example.com", StudentName = "student@example.com", Date = baseDate, Time = "08:00 - 10:00", Room = "Phòng 101", IsActive = true };
-            var schedule2 = new Schedules { Id = 2, CourseName = "Cơ sở dữ liệu", LecturerName = "lecturer@example.com", StudentName = "student@example.com", Date = baseDate.AddDays(1), Time = "13:00 - 15:00", Room = "Phòng 102", IsActive = true };
+            var schedule1 = new Schedules { Id = 1, CourseName = "Lập trình Web", LecturerName = "lecturer@example.com", StudentName = "student@example.com", Date = baseDate, Time = "17:45 - 21:00", Room = "Phòng 101", IsActive = true };
+            var schedule2 = new Schedules { Id = 2, CourseName = "Cơ sở dữ liệu", LecturerName = "lecturer@example.com", StudentName = "student@example.com", Date = baseDate.AddDays(1), Time = "17:45 - 21:00", Room = "Phòng 102", IsActive = true };
             var schedule3 = new Schedules { Id = 3, CourseName = "Toán cao cấp", LecturerName = "lecturer@example.com", StudentName = "student2@example.com", Date = baseDate.AddDays(2), Time = "09:00 - 11:00", Room = "Phòng 103", IsActive = true };
 
             modelBuilder.Entity<Schedules>().HasData(
@@ -44,9 +44,9 @@ namespace StudentAttendanceMVC.Data
 
             // Trong OnModelCreating, thêm vào seed ClassSession
             modelBuilder.Entity<ClassSession>().HasData(
-                new ClassSession { Id = 1, CourseName = "Lập trình Web", Date = new DateTime(2025, 9, 28), Time = "08:00 - 10:00", Room = "Phòng 101", ScheduleId = 1, IsAttendanceTaken = false },
-                new ClassSession { Id = 2, CourseName = "Cơ sở dữ liệu", Date = new DateTime(2025, 9, 29), Time = "13:00 - 15:00", Room = "Phòng 102", ScheduleId = 2, IsAttendanceTaken = false },
-                new ClassSession { Id = 3, CourseName = "Toán cao cấp", Date = new DateTime(2025, 9, 29), Time = "09:00 - 11:00", Room = "Phòng 103", ScheduleId = 3, IsAttendanceTaken = false }
+                new ClassSession { Id = 1, CourseName = "Lập trình Web", Date = new DateTime(2025, 10, 2), Time = "17:45 - 21:00", Room = "Phòng 101", ScheduleId = 1, IsAttendanceTaken = false },
+                new ClassSession { Id = 2, CourseName = "Cơ sở dữ liệu", Date = new DateTime(2025, 10, 3), Time = "17:45 - 21:00", Room = "Phòng 102", ScheduleId = 2, IsAttendanceTaken = false },
+                new ClassSession { Id = 3, CourseName = "Toán cao cấp", Date = new DateTime(2025, 10, 2), Time = "09:00 - 11:00", Room = "Phòng 103", ScheduleId = 3, IsAttendanceTaken = false }
             );
 
 

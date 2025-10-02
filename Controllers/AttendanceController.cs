@@ -1,11 +1,9 @@
-﻿using ClosedXML.Excel;
-using CsvHelper;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using StudentAttendanceMVC.Data;
 using StudentAttendanceMVC.Models;
-using System.Globalization;
+using ClosedXML.Excel;
 using System.IO;
 
 namespace StudentAttendanceMVC.Controllers
@@ -38,7 +36,6 @@ namespace StudentAttendanceMVC.Controllers
                 .FirstOrDefault(c => c.Id == classId);
             if (selectedClass != null)
             {
-                // Lưu điểm danh (cho phép mọi trường hợp, không bắt buộc đầy đủ)
                 foreach (var student in selectedClass.Students)
                 {
                     student.Attended = attendedStudentIds.Contains(student.Id);
@@ -55,60 +52,84 @@ namespace StudentAttendanceMVC.Controllers
             var classes = _context.ClassSessions
                 .Include(c => c.Students)
                 .ToList();
-            return View("LecturerAttendance", classes); // Trả về view với model mới
+            return View("LecturerAttendance", classes);
         }
 
-        [Authorize(Roles = "Student, Admin")]  // Chỉ Student và Admin xem trạng thái
+        [Authorize(Roles = "Student, Admin")]
         public IActionResult StudentAttendance()
         {
-            var classes = _context.ClassSessions.Where(c => c.Date.Date == DateTime.Today.Date).ToList();
-            return View(classes);
-        }
-
-        [Authorize(Roles = "Admin")]  // Chỉ Admin vào quản lý
-        public IActionResult AdminAttendance()
-        {
-            var classes = _context.ClassSessions.ToList();
+            var currentUser = User.Identity.Name; // Lấy tên sinh viên hiện tại
+            var classes = _context.ClassSessions
+                .Include(c => c.Students)
+                .Where(c => c.Students.Any(s => s.Name == currentUser)) // Lọc lớp của sinh viên
+                .ToList();
             return View(classes);
         }
 
         [Authorize(Roles = "Admin")]
-        public IActionResult DownloadAttendanceExcel(int classId = 0)
+        public IActionResult AdminAttendance(int? classId = null)
         {
-            IQueryable<Student> studentsQuery = _context.Students.Include(s => s.ClassSession);
-            if (classId > 0)
+            var classes = _context.ClassSessions
+                .Include(c => c.Students)
+                .ToList();
+
+            ViewBag.ClassSessions = classes; // Để dropdown chọn lớp
+            ViewBag.SelectedClassId = classId;
+
+            if (classId.HasValue)
             {
-                studentsQuery = studentsQuery.Where(s => s.ClassSessionId == classId);
+                var selectedClass = classes.FirstOrDefault(c => c.Id == classId.Value);
+                if (selectedClass != null)
+                {
+                    ViewBag.SelectedClass = selectedClass;
+                }
             }
 
-            var attendanceData = studentsQuery.Select(s => new
+            return View();
+        }
+
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        public IActionResult GetClassStudents(int classId)
+        {
+            var classSession = _context.ClassSessions
+                .Include(c => c.Students)
+                .FirstOrDefault(c => c.Id == classId);
+            if (classSession == null)
             {
-                StudentName = s.Name,
-                ClassName = s.ClassSession.CourseName,
-                Date = s.ClassSession.Date,
-                Time = s.ClassSession.Time,
-                Room = s.ClassSession.Room,
+                return Json(new { success = false, message = "Không tìm thấy lớp." });
+            }
+
+            var students = classSession.Students.Select(s => new
+            {
+                Name = s.Name,
                 Attended = s.Attended ? "Có" : "Vắng"
             }).ToList();
 
+            return Json(new { success = true, students = students, className = classSession.CourseName, date = classSession.Date.ToShortDateString() });
+        }
+
+        [Authorize(Roles = "Admin")]
+        public IActionResult DownloadAttendanceExcel(int classId)
+        {
+            var classSession = _context.ClassSessions
+                .Include(c => c.Students)
+                .FirstOrDefault(c => c.Id == classId);
+            if (classSession == null)
+            {
+                return NotFound("Không tìm thấy lớp.");
+            }
+
             using (var workbook = new XLWorkbook())
             {
-                var worksheet = workbook.Worksheets.Add(classId == 0 ? "Báo Cáo Toàn Bộ" : "Lớp " + classId);
+                var worksheet = workbook.Worksheets.Add(classSession.CourseName);
                 worksheet.Cell(1, 1).Value = "Tên Sinh Viên";
-                worksheet.Cell(1, 2).Value = "Lớp Học";
-                worksheet.Cell(1, 3).Value = "Ngày";
-                worksheet.Cell(1, 4).Value = "Giờ";
-                worksheet.Cell(1, 5).Value = "Phòng";
-                worksheet.Cell(1, 6).Value = "Trạng Thái Điểm Danh";
+                worksheet.Cell(1, 2).Value = "Trạng Thái";
 
-                for (int i = 0; i < attendanceData.Count; i++)
+                for (int i = 0; i < classSession.Students.Count; i++)
                 {
-                    worksheet.Cell(i + 2, 1).Value = attendanceData[i].StudentName;
-                    worksheet.Cell(i + 2, 2).Value = attendanceData[i].ClassName;
-                    worksheet.Cell(i + 2, 3).Value = attendanceData[i].Date.ToString("dd/MM/yyyy");
-                    worksheet.Cell(i + 2, 4).Value = attendanceData[i].Time;
-                    worksheet.Cell(i + 2, 5).Value = attendanceData[i].Room;
-                    worksheet.Cell(i + 2, 6).Value = attendanceData[i].Attended;
+                    worksheet.Cell(i + 2, 1).Value = classSession.Students[i].Name;
+                    worksheet.Cell(i + 2, 2).Value = classSession.Students[i].Attended ? "Có" : "Vắng";
                 }
 
                 worksheet.Columns().AdjustToContents();
@@ -116,10 +137,10 @@ namespace StudentAttendanceMVC.Controllers
                 using (var stream = new MemoryStream())
                 {
                     workbook.SaveAs(stream);
-                    var fileName = classId == 0 ? "BaoCaoDiemDanhToanBo.xlsx" : $"Lop{classId}_DiemDanh.xlsx";
-                    return File(stream.ToArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
+                    return File(stream.ToArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "attendance.xlsx");
                 }
             }
         }
+
     }
 }

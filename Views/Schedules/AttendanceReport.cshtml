@@ -6,10 +6,7 @@
             <div class="card-header">
                 <h3 class="mb-0">Báo Cáo Điểm Danh</h3>
                 <div class="d-flex gap-2">
-                    <a href="@Url.Action("DownloadAttendanceExcel", new { classId = 0 })" class="btn btn-success">Tải Excel Toàn Bộ</a>
-                    <form asp-action="ResetAttendance" method="post" class="d-inline">
-                        <button type="submit" class="btn btn-warning" onclick="return confirm('Bạn có chắc muốn reset toàn bộ điểm danh?')">Reset Toàn Bộ</button>
-                    </form>
+                    <a href="@Url.Action("DownloadAttendanceExcel", "Attendance", new { classId = 0 })" class="btn btn-success">Tải Excel Toàn Bộ</a>
                 </div>
             </div>
             <div class="card-body">
@@ -28,6 +25,8 @@
                                     <th>Tên Sinh Viên</th>
                                     <th>Lớp Học</th>
                                     <th>Ngày</th>
+                                    <th>Giờ</th>
+                                    <th>Phòng</th>
                                     <th>Trạng Thái</th>
                                 </tr>
                             </thead>
@@ -38,9 +37,11 @@
                                         <td>@item.StudentName</td>
                                         <td>@item.ClassName</td>
                                         <td>@item.Date.ToString("dd/MM/yyyy")</td>
+                                        <td>@item.Time</td>
+                                        <td>@item.Room</td>
                                         <td>
-                                            <span class="badge @(item.Attended ? "bg-success" : "bg-danger")">
-                                                @(item.Attended ? "Có" : "Vắng")
+                                            <span class="badge @(item.Attended == "Có" ? "bg-success" : "bg-danger")">
+                                                @item.Attended
                                             </span>
                                         </td>
                                     </tr>

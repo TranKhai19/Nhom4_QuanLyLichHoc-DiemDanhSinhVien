@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wxDSdlRp/aA=",
+  "dgSpecHash": "0d93ukPYOHQ=",
   "success": true,
-  "projectFilePath": "D:\\Learning\\CS464_LapTrinhUDNet\\StudentAttendanceMVC\\StudentAttendanceMVC.csproj",
+  "projectFilePath": "D:\\Nhom4_QuanLyLichHoc-DiemDanhSinhVien\\StudentAttendanceMVC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\tdk19\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\tdk19\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

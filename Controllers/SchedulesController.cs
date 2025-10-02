@@ -113,7 +113,7 @@ namespace StudentAttendanceMVC.Controllers
             }
 
             var classSession = _context.ClassSessions
-                .Include(c => c.Students)
+                .Include(c => c.Students) // Load sinh viên để cập nhật
                 .FirstOrDefault(c => c.Id == classId && _context.Schedules.Any(s => s.Id == c.ScheduleId && s.LecturerName == User.Identity.Name && s.IsActive));
             if (classSession == null)
             {
@@ -126,14 +126,13 @@ namespace StudentAttendanceMVC.Controllers
             var timeLimit = classStartTime.AddMinutes(30);
             var currentTime = DateTime.Now;
 
-            // Kiểm tra thời gian
             if (currentTime > timeLimit)
             {
                 TempData["Error"] = $"Không thể chỉnh sửa điểm danh. Thời gian lớp đã hết hạn (chỉ cho phép trong 30 phút từ {classStartTime:HH:mm}).";
                 return RedirectToAction("LecturerStudents", new { classId });
             }
 
-            // Lưu điểm danh dựa trên dictionary (cho phép mọi trường hợp)
+            // Lưu điểm danh (cho phép mọi trường hợp)
             if (attended != null && attended.Any())
             {
                 foreach (var kvp in attended)
@@ -147,7 +146,8 @@ namespace StudentAttendanceMVC.Controllers
             }
 
             classSession.IsAttendanceTaken = true;
-            _context.SaveChanges();
+            _context.SaveChanges(); // Đảm bảo lưu thay đổi
+
             TempData["Success"] = "Điểm danh đã được lưu thành công! Bạn có thể chỉnh sửa trong 30 phút tiếp theo.";
 
             return RedirectToAction("LecturerStudents", new { classId });
@@ -164,14 +164,15 @@ namespace StudentAttendanceMVC.Controllers
                     StudentName = s.Name,
                     ClassName = s.ClassSession.CourseName,
                     Date = s.ClassSession.Date,
+                    Time = s.ClassSession.Time,
+                    Room = s.ClassSession.Room,
                     Attended = s.Attended
                 })
                 .ToList();
             return View(attendanceData);
         }
 
-        [HttpPost]
-        [Authorize(Roles = "Admin")]
+        
         public IActionResult ResetAttendance(int classId = 0)
         {
             if (classId > 0)
@@ -211,26 +212,42 @@ namespace StudentAttendanceMVC.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        public IActionResult DownloadAttendanceExcel(int classId)
+        public IActionResult DownloadAttendanceExcel(int classId = 0)
         {
-            var classSession = _context.ClassSessions
-                .Include(c => c.Students)
-                .FirstOrDefault(c => c.Id == classId);
-            if (classSession == null)
+            IQueryable<Student> studentsQuery = _context.Students.Include(s => s.ClassSession);
+            if (classId > 0)
             {
-                return NotFound("Không tìm thấy lớp.");
+                studentsQuery = studentsQuery.Where(s => s.ClassSessionId == classId);
             }
+
+            var attendanceData = studentsQuery.Select(s => new
+            {
+                StudentName = s.Name,
+                ClassName = s.ClassSession.CourseName,
+                Date = s.ClassSession.Date,
+                Time = s.ClassSession.Time,
+                Room = s.ClassSession.Room,
+                Attended = s.Attended ? "Có" : "Vắng"
+            }).ToList();
 
             using (var workbook = new XLWorkbook())
             {
-                var worksheet = workbook.Worksheets.Add(classSession.CourseName);
+                var worksheet = workbook.Worksheets.Add(classId == 0 ? "Báo Cáo Toàn Bộ" : "Lớp " + classId);
                 worksheet.Cell(1, 1).Value = "Tên Sinh Viên";
-                worksheet.Cell(1, 2).Value = "Trạng Thái Điểm Danh";
+                worksheet.Cell(1, 2).Value = "Lớp Học";
+                worksheet.Cell(1, 3).Value = "Ngày";
+                worksheet.Cell(1, 4).Value = "Giờ";
+                worksheet.Cell(1, 5).Value = "Phòng";
+                worksheet.Cell(1, 6).Value = "Trạng Thái Điểm Danh";
 
-                for (int i = 0; i < classSession.Students.Count; i++)
+                for (int i = 0; i < attendanceData.Count; i++)
                 {
-                    worksheet.Cell(i + 2, 1).Value = classSession.Students[i].Name;
-                    worksheet.Cell(i + 2, 2).Value = classSession.Students[i].Attended ? "Có" : "Vắng";
+                    worksheet.Cell(i + 2, 1).Value = attendanceData[i].StudentName;
+                    worksheet.Cell(i + 2, 2).Value = attendanceData[i].ClassName;
+                    worksheet.Cell(i + 2, 3).Value = attendanceData[i].Date.ToString("dd/MM/yyyy");
+                    worksheet.Cell(i + 2, 4).Value = attendanceData[i].Time;
+                    worksheet.Cell(i + 2, 5).Value = attendanceData[i].Room;
+                    worksheet.Cell(i + 2, 6).Value = attendanceData[i].Attended;
                 }
 
                 worksheet.Columns().AdjustToContents();
@@ -238,7 +255,8 @@ namespace StudentAttendanceMVC.Controllers
                 using (var stream = new MemoryStream())
                 {
                     workbook.SaveAs(stream);
-                    return File(stream.ToArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", $"{classSession.CourseName}_attendance.xlsx");
+                    var fileName = classId == 0 ? "BaoCaoDiemDanhToanBo.xlsx" : $"Lop{classId}_DiemDanh.xlsx";
+                    return File(stream.ToArray(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileName);
                 }
             }
         }

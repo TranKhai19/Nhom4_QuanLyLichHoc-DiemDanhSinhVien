@@ -268,27 +268,27 @@ namespace StudentAttendanceMVC.Migrations
                         {
                             Id = 1,
                             CourseName = "Lập trình Web",
-                            Date = new DateTime(2025, 9, 28, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsAttendanceTaken = false,
                             Room = "Phòng 101",
                             ScheduleId = 1,
-                            Time = "08:00 - 10:00"
+                            Time = "17:45 - 21:00"
                         },
                         new
                         {
                             Id = 2,
                             CourseName = "Cơ sở dữ liệu",
-                            Date = new DateTime(2025, 9, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 10, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsAttendanceTaken = false,
                             Room = "Phòng 102",
                             ScheduleId = 2,
-                            Time = "13:00 - 15:00"
+                            Time = "17:45 - 21:00"
                         },
                         new
                         {
                             Id = 3,
                             CourseName = "Toán cao cấp",
-                            Date = new DateTime(2025, 9, 29, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Date = new DateTime(2025, 10, 2, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             IsAttendanceTaken = false,
                             Room = "Phòng 103",
                             ScheduleId = 3,
@@ -344,7 +344,7 @@ namespace StudentAttendanceMVC.Migrations
                             LecturerName = "lecturer@example.com",
                             Room = "Phòng 101",
                             StudentName = "student@example.com",
-                            Time = "08:00 - 10:00"
+                            Time = "17:45 - 21:00"
                         },
                         new
                         {
@@ -355,7 +355,7 @@ namespace StudentAttendanceMVC.Migrations
                             LecturerName = "lecturer@example.com",
                             Room = "Phòng 102",
                             StudentName = "student@example.com",
-                            Time = "13:00 - 15:00"
+                            Time = "17:45 - 21:00"
                         },
                         new
                         {
